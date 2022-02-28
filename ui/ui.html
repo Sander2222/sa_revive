@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="app.js" type="text/javascript"></script>
+        <script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+    </head>
+    <body>
+    <div id="container">
+        <div id="main_box">
+            <div id="header_box">
+                <h1 id="header_text">Revive Station</h1>
+            </div>
+            <div id="button_box">
+                <p id="keybind">
+                    Bei einer Revivestation kannst du in dem unteren Feld eine ID eintragen von einem Spieler. Dann
+                    bezahlst du 1000$ um diesen wieder zubeleben.
+                </p>
+                <input id="inputfield" type="text" autofocus="on" placeholder="Enter spieler id"/>
+                <button id="btn" type="submit" onclick="sendid()">
+                    Spieler Reviven
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
