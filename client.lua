@@ -1,9 +1,7 @@
--- made by Sander#2211
-
 ESX = nil
 local display = false
 
-
+--ad ESX
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
