@@ -28,7 +28,7 @@ $(function () {
     };
 
     $("#btn").click(function(e) {
-		$.post('http://sa_revive/register', JSON.stringify({
+		$.post('https://sa_revive/register', JSON.stringify({
 			PlayerID: $("#inputfield").val()
 		}));
 	});
