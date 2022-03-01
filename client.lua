@@ -82,9 +82,3 @@ Citizen.CreateThread(function()
     AddTextComponentString(Config.Blipname)
     EndTextCommandSetBlipName(blip)
 end)
-
---Serverside Notify
-RegisterNetEvent('sa_revive:showNotify')
-AddEventHandler('sa_revive:showNotify', function(title, subtitle, text, pic)
-    TriggerEvent('esx:showAdvancedNotification', title, subtitle, text, pic, 1)
-end)
