@@ -1,3 +1,2 @@
 # sa_revive
-
-Test
+This is a revive station
