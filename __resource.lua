@@ -4,12 +4,14 @@ author 'Sander#2211'
 description 'a keybind UI'
 
 client_scripts {
-    'client.lua',
-    'config.lua'
+    'client.lua'
 }
 
 server_scripts {
-    'server.lua',
+    'server.lua'
+}
+
+shared_script {
     'config.lua'
 }
 
