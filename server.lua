@@ -14,7 +14,7 @@ AddEventHandler('sa_revive:Revive', function(id, target, health)
 
 
     if tonumber(id) == tonumber(target) then
-        if health < 1 then 
+        if health < 1 then
             if MoneyX >  Config.Price then
                 xPlayer.removeAccountMoney('money', Config.Price)
                 TriggerClientEvent('sa_revive:showNotify', _source, 'Revive-station', 'Revive','you revived: ~g~' ..xTarget.getName().. '~w~',  'CHAR_CALL911')
