@@ -1,13 +1,5 @@
-ESX = nil
+ESX = exports["es_extended"]:getSharedObject()
 local display = false
-
---ad ESX
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-end)
 
 
 --Debug
@@ -44,19 +36,7 @@ function SetDisplay(bool)
     })
 end
 
-Citizen.CreateThread(function()
-    while display do
-        Citizen.Wait(0)
-        DisableControlAction(0, 1, display) 
-        DisableControlAction(0, 2, display) 
-        DisableControlAction(0, 142, display) 
-        DisableControlAction(0, 18, display) 
-        DisableControlAction(0, 322, display) 
-        DisableControlAction(0, 106, display) 
-    end
-end)
-
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         Wait(0)
         for key, value in pairs(Config.Coords) do
@@ -65,7 +45,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         Wait(0)
 
@@ -83,7 +63,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     for _, coords in pairs(Config.Coords) do
         local blip = AddBlipForCoord(vector3(Config.Coords.x, Config.Coords.y, Config.Coords.z))
 

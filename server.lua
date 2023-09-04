@@ -1,8 +1,6 @@
 --made by Sander#2211
 
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ESX = exports["es_extended"]:getSharedObject()
 
 RegisterServerEvent('sa_revive:Revive')
 AddEventHandler('sa_revive:Revive', function(id, target, health)
