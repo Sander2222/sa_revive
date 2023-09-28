@@ -13,11 +13,16 @@ AddEventHandler('sa_revive:Revive', function(id, target, health)
                 xPlayer.removeAccountMoney('money', Config.Price)
                 Config.ServerNotify( (Config.Locals.Revived):format(xTarget.getName()), _source)
                 Config.ServerNotify((Config.Locals.GotRevived):format(xPlayer.getName()),  target)
-                xTarget.triggerEvent('esx_ambulancejob:revive')
+
+                if Config.UseWasabi then
+                    exports.wasabi_ambulance:RevivePlayer(target)
+                else
+                    xTarget.triggerEvent('esx_ambulancejob:revive')
+                end
             else
                 Config.ServerNotify(Config.Locals.NotEnoughMoney,  _source)
-            end 
-        else 
+            end
+        else
             Config.ServerNotify(Config.Locals.NotDead, _source)
         end
     else
