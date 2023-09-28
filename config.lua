@@ -2,6 +2,7 @@
 
 Config = {}
 Config.Price = 1000
+Config.UseWasabi = true
 
 Config.Blip = {
     ID = 61,
@@ -12,8 +13,7 @@ Config.Blip = {
 }
 
 Config.Coords = {
-    vector3(123, 123, 123),
-    vector3(123, 123, 123)
+    vector3(-2165.68359375,3108.8840332031,32.804141998291)
 }
 
 Config.Locals = {
