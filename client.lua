@@ -35,17 +35,18 @@ CreateThread(function()
         for _, coords in ipairs(Config.Coords) do
             local dist = #(GetEntityCoords(PlayerPedId()) - coords)
 
-            if dist <= 2.0 then
-                ESX.ShowHelpNotification(Config.Locals.PressE)
+            if dist <= 8.0 then
+                DrawMarker(20, vector3(coords.x, coords.y, coords.z), 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 0, 0, 100, false, true, 2, true, false, false, false)
 
-                if IsControlJustReleased(0, 38) then
-                    SetDisplay(true)
+                if dist <= 2.0 then
+                    ESX.ShowHelpNotification(Config.Locals.PressE)
+
+                    if IsControlJustReleased(0, 38) then
+                        SetDisplay(true)
+                    end
                 end
-            elseif dist <= 5.0 then
-                DrawMarker(20, vector3(coords.x, coords.y, coords.z + 1), 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 0, 0, 100, false, true, 2, true, false, false, false)
-
             else
-                Wait(1000)
+                Wait(500)
             end
         end
     end
