@@ -1,21 +1,14 @@
 fx_version 'cerulean'
 games { 'gta5' }
 author 'Sander#2211'
-description 'a keybind UI'
+description 'Revive Station'
+version '2.0'
 
-client_scripts {
-    'client.lua'
-}
+client_script 'client.lua'
+server_script 'server.lua'
+shared_script 'config.lua'
 
-server_scripts {
-    'server.lua'
-}
-
-shared_script {
-    'config.lua'
-}
-
-ui_page ('ui/ui.html')
+ui_page 'ui/ui.html'
 
 files {
     'ui/ui.html',
