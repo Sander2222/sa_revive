@@ -29,14 +29,20 @@ function SetDisplay(bool)
     })
 end
 
+local Found = false
+
 CreateThread(function()
     while true do
         Wait(0)
+        Found = false
         for _, coords in ipairs(Config.Coords) do
             local dist = #(GetEntityCoords(PlayerPedId()) - coords)
 
+            print(dist)
             if dist <= 8.0 then
                 DrawMarker(20, vector3(coords.x, coords.y, coords.z), 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 0, 0, 100, false, true, 2, true, false, false, false)
+
+                Found = true
 
                 if dist <= 2.0 then
                     ESX.ShowHelpNotification(Config.Locals.PressE)
@@ -45,9 +51,11 @@ CreateThread(function()
                         SetDisplay(true)
                     end
                 end
-            else
-                Wait(500)
             end
+        end
+        
+        if not Found then
+            Wait(500)
         end
     end
 end)
