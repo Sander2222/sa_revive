@@ -5,7 +5,10 @@ description 'Revive Station'
 version '2.0'
 
 client_script 'client.lua'
-server_script 'server.lua'
+server_scripts {
+    'svconfig.lua',
+    'server.lua'
+}
 shared_script 'config.lua'
 
 ui_page 'ui/ui.html'
