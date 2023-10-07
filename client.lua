@@ -38,7 +38,6 @@ CreateThread(function()
         for _, coords in ipairs(Config.Coords) do
             local dist = #(GetEntityCoords(PlayerPedId()) - coords)
 
-            print(dist)
             if dist <= 8.0 then
                 DrawMarker(20, vector3(coords.x, coords.y, coords.z), 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 0, 0, 100, false, true, 2, true, false, false, false)
 
