@@ -19,6 +19,19 @@ AddEventHandler('sa_revive:Revive', function(id, target, health)
                 else
                     xTarget.triggerEvent('esx_ambulancejob:revive')
                 end
+
+                local Message = (SVConfig.Webhook.Message):format(xPlayer.getName(), tostring(_source), xPlayer.getIdentifier(), xTarget.getName(), tostring(target), xTarget.getIdentifier())
+                local embed = {
+                      {
+                          ["color"] = SVConfig.Webhoo.color,
+                          ["title"] = SVConfig.Webhook.Title,
+                          ["description"] = SVConfig.Webhook.Message,
+                          ["footer"] = {
+                              ["text"] = SVConfig.Webhook.Footer,
+                          },
+                      }
+                  }
+                PerformHttpRequest(SVConfig.Webhook.Link, function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
             else
                 Config.ServerNotify(Config.Locals.NotEnoughMoney,  _source)
             end
